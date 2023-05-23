@@ -1,43 +1,43 @@
-一、登录界面
-1、首先初始化一个window界面
+1. Login interface
+1. First initialize a window interface
         window = tk.Tk()
-        window.title('Welcome to Mofan Python')
+        window.title('Welcome to Xiao Python')
         window.geometry('450x300')
         .
         .
         .
         window.mainloop()
-2、界面需要一个欢迎的logo,主要使用画布实现
+2. The interface needs a welcome logo, which is mainly implemented using the canvas
         #welcome image
-        #创建一个200X500的画布
+        #200X500
         canvas =  tk.Canvas(window,height = 200,width = 500)
-        #logo的路径
+        #logo
         image_file = tk.PhotoImage(file = 'E:\welcome.gif')
-        #什么位置插入logo图片
+        #Where to insert the logo image
         image = canvas.create_image(0,0,anchor = 'nw',image = image_file)
         canvas.pack(side = 'top')
-3、接下来主要是登录界面的代码实现
+3. The next step is mainly the code implementation of the login interface
         tk.Label(window,text = 'Username:').place(x = 50,y = 150)
         tk.Label(window,text = 'Password:').place(x = 50,y = 190)
     
         var_usr_name = tk.StringVar()
-        #默认值为MrZhangxd@python.com
-        var_usr_name.set('MrZhangxd@python.com')
+        #默认值为Xiao@python.com
+        var_usr_name.set('Xiao@python.com')
         var_usr_pwd = tk.StringVar()
         entry_usr_name = tk.Entry(window,textvariable = var_usr_name)
         entry_usr_name.place(x = 160,y = 150)
     
         entry_usr_pwd = tk.Entry(window,textvariable = var_usr_pwd,show ='*')
         entry_usr_pwd.place(x = 160,y = 190)
-4、登录和注册按钮的实现代码
+4. Implementation code of login and registration buttons
         #Login and Sign up button
-        # command = usr_login 调用usr_login函数
+        # command = usr_login Call usr_login function
         btn_login = tk.Button(window,text = 'Login',command = usr_login)
         btn_login.place(x = 170,y = 230)
         btn_sign_up = tk.Button(window,text = 'Sign up',command = usr_sign_up)
         btn_sign_up.place(x = 270,y = 230)
-5、进行登录判断代码：主要用函数判断
-声明usr_login函数
+5. Login judgment code: mainly use functions to judge
+Declare usr_login function
             def usr_login():
                 usr_name = var_usr_name.get()
                 usr_pwd = var_usr_pwd.get()
@@ -58,11 +58,10 @@
             
                     if is_sign_up:
                         usr_sign_up()
-登录用户不存在需要注册
-二、注册界面
-差不多和登录界面一样，然后不进行细细的说明了，有不懂地方的可以给下文邮件地址发邮箱。
+Signed-in user does not exist and registration is required
+2. Registration interface
     def usr_sign_up():
-        def sign_to_Mofan_Python():
+        def sign_to_Xiao_Python():
     
             np = new_pwd.get()
     
@@ -86,7 +85,7 @@
         window_sign_up.title('Sign up window')
     
         new_name = tk.StringVar()
-        new_name.set('MrZhangxd@python.com')
+        new_name.set('Xiao@python.com')
         tk.Label(window_sign_up,text = 'Username:').place(x = 10,y = 10)
         entry_new_name = tk.Entry(window_sign_up,textvariable = new_name)
         entry_new_name.place(x = 150,y = 10)
@@ -101,6 +100,6 @@
         entry_comfirm_sign_up = tk.Entry(window_sign_up,textvariable = new_pwd_confirm,show = '*')
         entry_comfirm_sign_up.place(x = 150,y = 90)
     
-        btn_comfirm_sign_up = tk.Button(window_sign_up,text = 'Sign up',command = sign_to_Mofan_Python)
+        btn_comfirm_sign_up = tk.Button(window_sign_up,text = 'Sign up',command = sign_to_Xiao_Python)
         btn_comfirm_sign_up.place(x = 150,y = 130)
 
